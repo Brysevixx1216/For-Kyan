@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffd3a5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 0 25px rgba(0,0,0,.2);
+}
+
+img{
+    width:220px;
+    border-radius:20px;
+    border:4px solid white;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:40px;
+}
+
+p{
+    margin-top:15px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+button{
+    margin-top:25px;
+    padding:15px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:white;
+    color:#ff4f81;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+#letter{
+    display:none;
+    margin-top:20px;
+    animation:fade .8s;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    animation:float linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh) scale(.5);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px) scale(1.5);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Replace this with your picture -->
+<img src="https://via.placeholder.com/220x220.png?text=Our+Photo">
+
+<h1>Happy 8th Monthsary ❤️</h1>
+
+<p>
+To the most beautiful girl in my life,
+thank you for choosing to stay.
+</p>
+
+<button onclick="openLetter()">Open My Heart ❤️</button>
+
+<div id="letter">
+<p>
+My love,
+<br><br>
+Happy 8th monthsary. Thank you for staying beside me even while you're fighting battles that no one else can see. I know healing isn't easy, and I know there are days when your own mind feels heavy. But even on those days, I'll continue choosing you.
+<br><br>
+I don't expect you to be perfect. I just want you to know that you're deeply loved, appreciated, and never alone. I'll stay through the laughter, the tears, the silence, and every step of your healing.
+<br><br>
+Thank you for loving me despite everything. You make my world brighter, and I'll always be grateful that I get to call you mine.
+<br><br>
+I love you today, tomorrow, and every day after that.
+❤️
+</p>
+
+<button onclick="stayForever()">Will You Stay With Me Forever? 💍</button>
+
+</div>
+
+</div>
+
+<!-- Hidden Music -->
+<audio id="music" loop>
+    <!-- Replace with your own MP3 -->
+    <source src="YOURSONG.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function openLetter(){
+    document.getElementById("letter").style.display="block";
+    document.getElementById("music").play();
+
+    alert("Every heartbeat of mine whispers your name. ❤️");
+}
+
+function stayForever(){
+    alert("No matter what life brings, I'll always choose you. I love you forever. ❤️");
+}
+
+// Floating Hearts
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(15+Math.random()*30)+"px";
+    heart.style.animationDuration=(3+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,250);
+
+</script>
+
+</body>
+</html>
